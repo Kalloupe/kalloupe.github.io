@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nombre mystère</title>
+<link rel="stylesheet" href="style_nsi.css" />
+</head>
+<body>
+
+<p class="titre">Bienvenue sur le jeu du nombre mystère</p> </br>
+
+<label class="enter">Devinez le nombre mystère compris entre 1 et 100 : </label> 
+<input class="enter" id="proposition"> <br><br>
+
+<button class="bouton" id="soumettre" type="button">Soumettre</button> <br>
+
+<p id="reponse"></p>
+
+<button class="bouton" id="restart" type="button">Recommencer</button> <br><br><br>
+
+<a class="lien" href="page.html" style="text-align:left">Retour à l'accueil</a>
+
+
+
+<script language="javascript">
+
+document.getElementById("soumettre").addEventListener("click", indication);
+document.getElementById("restart").addEventListener("click", restart);
+
+var solution = Math.floor(Math.random()*100+1);
+var nombre_coups = 0;
+var jeu_termine = false;
+function indication() {
+	if (!jeu_termine) {
+	
+		var proposition = parseInt(document.getElementById("proposition").value, 10);
+		if (!isNaN(proposition)) {
+			nombre_coups += 1;
+		}
+		
+		if (nombre_coups < 10) {
+			if (proposition < solution) {
+				document.getElementById("reponse").innerHTML = "Trop bas ! "+(10-nombre_coups)+"  coups restant(s)";
+			}
+	
+			if (proposition > solution) {
+				document.getElementById("reponse").innerHTML = "Trop haut ! "+(10-nombre_coups)+"  coups restant(s)";
+			}
+	
+			if (proposition === solution) {
+				document.getElementById("reponse").innerHTML = "Bravo, tu as trouvé le nombre mystère en "+ nombre_coups +" coups !";
+				jeu_termine = true;
+			}
+		} else if (nombre_coups === 10) {
+			if (proposition === solution) {
+                document.getElementById("reponse").innerHTML = "Bravo, tu as trouvé le nombre mystère en 10 coups !";
+                jeu_termine = true;
+            } else {
+                document.getElementById("reponse").innerHTML = "Perdu, tu as dépassé les 10 propositions !";
+                jeu_termine = true;
+			}
+		}
+	}
+}
+
+function restart(){
+	solution = Math.floor(Math.random()*100+1);
+	nombre_coups = 0;
+	jeu_termine = false;
+	document.getElementById("reponse").innerHTML = "";
+	document.getElementById("proposition").value = "";
+}
+</script>
+
+</body>
+</html>
