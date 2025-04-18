@@ -8,13 +8,14 @@
     text-align: center;
     color: red;
     font-size: 32px;
+    display: block
 }
 
 .lien a {
     color: red;
     font-size: 32px;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .lien a:hover {
