@@ -13,6 +13,8 @@
 .lien a {
     color: red;          /* Couleur du texte du lien */
     font-size: 32px;     /* Taille de la police */
+    display: inline-block; /* Les liens se comportent comme des blocs mais n'occupent que l'espace nécessaire autour du texte */
+    margin-bottom: 10px; /* Ajoute un petit espace entre les liens */
 }
 
 /* Effet au survol des liens */
