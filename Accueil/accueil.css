@@ -15,7 +15,7 @@
     color: red;
     font-size: 32px;
     text-align: center;
-    display: block; 
+    display: inline-block; 
 }
 .lien:hover {
     color: green;
