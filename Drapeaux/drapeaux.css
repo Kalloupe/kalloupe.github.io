@@ -45,7 +45,7 @@ body {
 }
 
 #message-box {
-    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
