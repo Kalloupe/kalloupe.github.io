@@ -13,9 +13,6 @@
 .lien a {
     color: red;          /* Couleur du texte du lien */
     font-size: 32px;     /* Taille de la police */
-    display: block;      /* Chaque lien prend toute la largeur de la ligne */
-    text-decoration: none; /* Enlève le soulignement des liens */
-    margin-bottom: 10px; /* Ajoute un petit espace entre les liens */
 }
 
 /* Effet au survol des liens */
