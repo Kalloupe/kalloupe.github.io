@@ -4,21 +4,21 @@
     text-align: center;
 }
 
-
-/* Style général des liens dans la div .lien */
 .lien {
-    text-align: center;  /* Centre les liens dans la div */
+    text-align: center;
+    color: red;
+    font-size: 32px;
+    display: inline-block;
 }
 
 .lien a {
-    color: red;          /* Couleur du texte du lien */
-    font-size: 32px;     /* Taille de la police */
-    display: inline-block; /* Les liens se comportent comme des blocs mais n'occupent que l'espace nécessaire autour du texte */
+    color: red;
+    font-size: 32px;
+    display: inline-block;
 }
 
-/* Effet au survol des liens */
 .lien a:hover {
-    color: green;        /* Change la couleur du lien quand on survole */
+    color: green;
 }
 
 
