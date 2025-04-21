@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chifoumi</title>
+<link rel="stylesheet" href="chifoumi.css" />
+<link rel="stylesheet" href="../Accueil/accueil.css" />
+</head>
+<body>
+
+<p class="titre">Bienvenue sur le chifoumi</p> <br>
+
+<p id="zob">Faites votre choix</p> <br><br><br>
+
+<p class="personne" style="margin-left:16%">Vous :</p>
+<p class="personne" style="margin-left:47%">Robot :</p> <br><br><br><br><br>
+
+<div id="boutons-boite">
+    <button id="pierre" type="button">Pierre</button>
+    <button id="feuille" type="button">Feuille</button>
+    <button id="ciseaux" type="button">Ciseaux</button>
+</div>
+
+
+
+
+<a class="lien" id="accueil" href="/Accueil" style="text-align:left; display:inline-block">Retour à l'accueil</a>
+
+<script language="javascript">
+
+
+
+
+
+
+
+document.getElementById("pierre").addEventListener("click", () => Game("pierre"));
+document.getElementById("feuille").addEventListener("click", () => Game("feuille"));
+document.getElementById("ciseaux").addEventListener("click", () => Game("ciseaux"));
+
+function Game(choix) {
+    const images = Array.from({ length: 6 }, (crotte, i) => `Images/${choix}/${i+1}.png`)
+
+
+    const imageBox = document.createElement("div");
+        imageBox.id = "image-boite";
+        document.body.insertBefore(imageBox, document.getElementById("accueil"));
+
+
+    const image = document.createElement("img");
+        image.id = choix;
+        image.src = images[Math.floor(Math.random() * 6)];
+        image.alt = `Image de ${choix}`;
+        image.style = "max-width:700px; max-height:700px; min-width:400px; min-height:400px; width:auto; height:auto;";
+
+    imageBox.appendChild(image);
+    
+    document.getElementById("boutons-boite").remove()
+
+
+}
+
+</script>
+
+</body>
+</html>

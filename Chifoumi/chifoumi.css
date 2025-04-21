@@ -1,0 +1,43 @@
+#zob {
+    text-align: center;
+    font-size: 40px;
+}
+
+.personne {
+    display: inline;
+    font-size: 70px;
+}
+
+#boutons-boite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 16%;
+    width: fit-content;
+}
+
+button {
+    font-size: 50px;
+    margin-bottom: 12%;
+}
+
+#image-boite {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: fit-content;
+    left: 12%;
+}
+
+#image-boite-bot {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: fit-content;
+    left: 12%;
+}
+
+#accueil {
+    position: absolute;
+    bottom: 0%;
+}

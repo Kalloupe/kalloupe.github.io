@@ -7,27 +7,16 @@
 }
 
 .lien {
-    text-align: center;
-    color: red;
-    font-size: 32px;
-    font-family: "Times New Roman"
-}
-
-.lien a {
-    color: red;
-    font-size: 32px;
     display: inline-block;
+    color: red;
+    font-size: 32px;
+    font-family: "Times New Roman";
     margin-bottom: 20px;
-}
-
-.lien a:hover {
-    color: green;
 }
 
 .lien:hover {
     color: green
 }
-
 
 .images {
     display: flex;
