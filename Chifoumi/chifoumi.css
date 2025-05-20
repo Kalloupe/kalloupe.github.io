@@ -34,7 +34,8 @@ button {
     position: absolute;
     align-items: center;
     width: fit-content;
-    left: 12%;
+    left: 65%;
+    transform: scaleX(-1)
 }
 
 #accueil {

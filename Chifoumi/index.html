@@ -29,34 +29,51 @@
 
 <script language="javascript">
 
-
-
-
-
-
+const possibilites = ["pierre", "feuille", "ciseaux"]
+const regles = {
+    pierre: "ciseaux",
+    feuille: "pierre",
+    ciseaux: "feuille"
+};
 
 document.getElementById("pierre").addEventListener("click", () => Game("pierre"));
 document.getElementById("feuille").addEventListener("click", () => Game("feuille"));
 document.getElementById("ciseaux").addEventListener("click", () => Game("ciseaux"));
 
 function Game(choix) {
-
-
+    document.getElementById("boutons-boite").remove()
+    
     const imageBox = document.createElement("div");
         imageBox.id = "image-boite";
         document.body.insertBefore(imageBox, document.getElementById("accueil"));
 
+    const imageBoxBot = document.createElement("div");
+        imageBoxBot.id = "image-boite-bot";
+        document.body.insertBefore(imageBoxBot, document.getElementById("accueil"));
 
     const image = document.createElement("img");
-        image.id = choix;
+        image.id = "userImg";
         image.src = `${choix}.png`
         image.alt = `Image de ${choix}`;
-        image.style = "max-width:700px; max-height:700px; min-width:400px; min-height:400px; width:auto; height:auto;";
-
+        image.style = "width:400px"
     imageBox.appendChild(image);
-    
-    document.getElementById("boutons-boite").remove()
 
+    const choixBot = possibilites[Math.floor(Math.random() * possibilites.length)];
+    const image2 = document.createElement("img");
+        image2.id = "botImg";
+        image2.src = `${choixBot}.png`
+        image2.alt = `Image de ${choixBot}`;
+        image2.style = "width:400px"
+    imageBoxBot.appendChild(image2);
+
+    const resultat = document.getElementById("zob");
+    if (regles[choix] === choixBot) {resultat.innerHTML = "Gagné"; resultat.style = "color: green"}
+    else if (regles[choixBot] === choix) {resultat.innerHTML = "Perdu"; resultat.style = "color: red"}
+    else {resultat.innerHTML = "Égalité"; resultat.style = "color: darkgoldenrod"}
+
+    console.log(choix)
+    console.log(choixBot)
+    console.log(regles[choix])
 
 }
 
