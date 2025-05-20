@@ -40,7 +40,6 @@ document.getElementById("feuille").addEventListener("click", () => Game("feuille
 document.getElementById("ciseaux").addEventListener("click", () => Game("ciseaux"));
 
 function Game(choix) {
-    const images = Array.from({ length: 6 }, (crotte, i) => `Images/${choix}/${i+1}.png`)
 
 
     const imageBox = document.createElement("div");
@@ -50,7 +49,7 @@ function Game(choix) {
 
     const image = document.createElement("img");
         image.id = choix;
-        image.src = images[Math.floor(Math.random() * 6)];
+        image.src = `${choix}.png`
         image.alt = `Image de ${choix}`;
         image.style = "max-width:700px; max-height:700px; min-width:400px; min-height:400px; width:auto; height:auto;";
 
