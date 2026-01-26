@@ -1,0 +1,55 @@
+/* Container responsive */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Game area */
+#game {
+  width: 100%;
+  height: 40vh; /* hauteur adaptée à l’écran */
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+
+/* Character sprite / carré rouge pour test */
+#character {
+  width: 10vw; /* s’adapte à la largeur de l’écran */
+  max-width: 80px; /* ne devient pas trop grand sur PC */
+  height: 10vw;
+  max-height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  border-radius: 10px;
+
+  /* Animation de course simulée */
+  animation: run 0.8s steps(4) infinite;
+}
+
+/* Simulation de course avec couleur */
+@keyframes run {
+  0% { background-color: red; }
+  25% { background-color: orange; }
+  50% { background-color: yellow; }
+  75% { background-color: green; }
+  100% { background-color: red; }
+}
+
+/* Responsive header */
+header h1 {
+  font-size: 5vw;
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
