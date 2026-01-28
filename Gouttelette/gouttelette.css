@@ -1,55 +1,76 @@
-/* Container responsive */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
-  width: 95%;
-  max-width: 1200px;
-  margin: auto;
+  width: 90vw;    
+  max-width: 800px; 
 }
 
-/* Game area */
-#game {
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #006064;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#jeu {
+  position: relative;   
   width: 100%;
-  height: 40vh; /* hauteur adaptée à l’écran */
-  border: 2px solid black;
-  position: relative;
+  height: 60vh;    
+  background-color: #b2ebf2;
+  border: 2px solid #004d40;
+  border-radius: 8px;
   overflow: hidden;
-  background-color: lightblue;
-  margin-top: 20px;
 }
 
-/* Character sprite / carré rouge pour test */
-#character {
-  width: 10vw; /* s’adapte à la largeur de l’écran */
-  max-width: 80px; /* ne devient pas trop grand sur PC */
-  height: 10vw;
-  max-height: 80px;
+#personnage {
   position: absolute;
+  width: 8vw;
+  max-width: 60px;
+  height: 8vh;
+  max-height: 60px;
+  background-color: rgb(21, 99, 11);
   bottom: 0;
   left: 0;
-  background-color: red;
-  border-radius: 10px;
-
-  /* Animation de course simulée */
-  animation: run 0.8s steps(4) infinite;
+  border-radius: 0px;
 }
 
-/* Simulation de course avec couleur */
-@keyframes run {
-  0% { background-color: red; }
-  25% { background-color: orange; }
-  50% { background-color: yellow; }
-  75% { background-color: green; }
-  100% { background-color: red; }
+.obstacle {
+  position: absolute;
+  background-color: brown;
+
 }
 
-/* Responsive header */
-header h1 {
-  font-size: 5vw;
-  text-align: center;
-  margin: 10px 0;
+.longH {
+  width: 30vw;
+  max-width: 300px;
+  height: 5vh;
+  max-height: 50px;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0px;
 }
 
-@media (min-width: 768px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
+.longV {
+  width: 4vw;
+  max-width: 40px;
+  height: 30vh;
+  max-height: 300px;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0px;
 }
