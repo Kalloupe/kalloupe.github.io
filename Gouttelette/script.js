@@ -2,9 +2,11 @@ const jeu = document.getElementById("jeu");
 const personnage = document.getElementById("personnage");
 const obstacles = document.getElementsByClassName("obstacle");
 
-creerObstacle("90%", "100px", ["longH"]);
-creerObstacle("40%", "50px", ["longH"]);
-creerObstacle("30%", "200px", ["longH"]);
+creerObstacle("500px", "40px", ["longH"]);
+creerObstacle("500px", "150px", ["longH"]);
+creerObstacle("500px", "270px", ["longH"]);
+const elementsJeu = Array.from(document.querySelectorAll("#jeu .obstacle"));
+console.log(elementsJeu)
 
 
 let posX = 0;
@@ -73,10 +75,12 @@ function gameLoop() {
 
   let nextPosX = posX;
   let nextPosY = posY;
+  let collisionX = false;
   
   if (moveLeft) {
     nextPosX -= vitesseX;
   }
+
   if (moveRight) {
     nextPosX += vitesseX;
   }
@@ -105,27 +109,29 @@ function gameLoop() {
     const obsX = obstacle.offsetLeft - obsWidth*0.5;
     const obsY = parseFloat(getComputedStyle(obstacle).bottom);
     const obsTop = obsHeight - 1;
-
+    
     // Collision DROITE
     if (
       nextPosX < posX &&
       posY < obsY + obsTop &&
-      posY + persHeight > obsY + 10 &&
+      posY + persHeight > obsY + saut &&
       posX + persWidth > obsX + obsWidth &&
       nextPosX < obsX + obsWidth
     ) {
       nextPosX = obsX + obsWidth;
+      collisionX = true;
     }
 
     // Collision GAUCHE
     if (
       nextPosX > posX &&
       posY < obsY + obsTop &&
-      posY + persHeight > obsY + 10 &&
+      posY + persHeight > obsY + saut &&
       nextPosX + persWidth > obsX &&
-      posX < obsX + obsWidth
+      posX + vitesseX < obsX + obsWidth
     ) {
       nextPosX = obsX - persWidth;
+      collisionX = true;
     }
 
     // Collision HAUT
@@ -153,7 +159,8 @@ function gameLoop() {
       vitesseY = 0;
     }
   }
-  
+
+
   posX = nextPosX;
   posY = nextPosY;
   personnage.style.left = posX + "px";
