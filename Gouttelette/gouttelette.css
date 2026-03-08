@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e0f7fa;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 90vw;    
+  max-width: 2000px; 
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #006064;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#jeu {
+  position: relative;   
+  width: 100%;
+  aspect-ratio: 4 / 2; 
+  background-color: #b2ebf2;
+  border: 2px solid #004d40;
+  border-radius: 8px;
+  overflow: hidden;
+
+  background-image: url("images/mur.jpg");
+  background-size: 16% auto;
+  background-repeat: repeat;
+}
+
+#personnage {
+  position: absolute;
+  z-index: 10;
+  width: 5%;
+  height: 15%;
+  /* background-color: rgb(21, 99, 11); */
+  border-radius: 0px;
+}
+
+.texte {
+  position: absolute;
+  font-family:  Arial, Helvetica, sans-serif;
+  font-size : 150%;
+  font-weight: bold;
+}
+
+.laser.droite,
+.laser.gauche {
+  position: absolute;
+  z-index: 2;
+  width: 3%;
+  height: 2%;
+  background-color: rgb(196, 164, 4);
+}
+
+.laser.haut,
+.laser.bas {
+  position: absolute;
+  z-index: 2;
+  width: 1%;
+  height: 6%;
+  background-color: rgb(196, 164, 4);
+}
+
+
+#porte {
+  position: absolute;
+  z-index: 1;
+  height: 25%;
+  /* background-color: rgb(89, 48, 1); */
+}
+
+.obstacle {
+  position: absolute;
+  z-index: 3;
+  /* background-color: brown; */
+}
+
+.longH {
+  width: 20%;
+  height: 5%;
+  border-radius: 0px;
+}
+
+.longV {
+  width: 2.5%;
+  height: 40%;
+  border-radius: 0px;
+}
+
+.carreG {
+  width: 20%;
+  height: 40%;
+  border-radius: 0px;
+}
+
+.carreM {
+  width: 10%;
+  height: 20%;
+  border-radius: 0px;
+}
+
+.carreP {
+  width: 5%;
+  height: 10%;
+  border-radius: 0px;
+}
+
+.plancher {
+  background-image : url("images/plancher.jpg");
+}
+
+.bureau {
+  height: 20%;
+  aspect-ratio: 1737/2199;
+  background-image: url("images/bureau.png");
+  background-size : cover;
+  background-color: transparent;
+}
+
+.etagere {
+  width: 20%;
+  aspect-ratio: 309/43;
+  background-image: url("images/etagere.png");
+  background-size : cover;
+  background-color: transparent;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chifoumi</title>
+<link rel="stylesheet" href="chifoumi.css" />
+<link rel="stylesheet" href="../Accueil/accueil.css" />
+</head>
+<body>
+
+<p class="titre">Bienvenue sur le chifoumi</p> <br>
+
+<p id="zob">Faites votre choix</p> <br><br><br>
+
+<p class="personne" style="margin-left:16%">Vous :</p>
+<p class="personne" style="margin-left:47%">Robot :</p> <br><br><br><br><br>
+
+<div id="boutons-boite">
+    <button id="pierre" type="button">Pierre</button>
+    <button id="feuille" type="button">Feuille</button>
+    <button id="ciseaux" type="button">Ciseaux</button>
+</div>
+
+
+
+
+<a class="lien" id="accueil" href="../Accueil" style="text-align:left; display:inline-block">Retour à l'accueil</a>
+
+<script language="javascript">
+
+const possibilites = ["pierre", "feuille", "ciseaux"]
+const regles = {
+    pierre: "ciseaux",
+    feuille: "pierre",
+    ciseaux: "feuille"
+};
+
+document.getElementById("pierre").addEventListener("click", () => Game("pierre"));
+document.getElementById("feuille").addEventListener("click", () => Game("feuille"));
+document.getElementById("ciseaux").addEventListener("click", () => Game("ciseaux"));
+
+function Game(choix) {
+    document.getElementById("boutons-boite").remove()
+    
+    const imageBox = document.createElement("div");
+        imageBox.id = "image-boite";
+        document.body.insertBefore(imageBox, document.getElementById("accueil"));
+
+    const imageBoxBot = document.createElement("div");
+        imageBoxBot.id = "image-boite-bot";
+        document.body.insertBefore(imageBoxBot, document.getElementById("accueil"));
+
+    const image = document.createElement("img");
+        image.id = "userImg";
+        image.src = `${choix}.png`
+        image.alt = `Image de ${choix}`;
+        image.style = "width:400px"
+    imageBox.appendChild(image);
+
+    const choixBot = possibilites[Math.floor(Math.random() * possibilites.length)];
+    const image2 = document.createElement("img");
+        image2.id = "botImg";
+        image2.src = `${choixBot}.png`
+        image2.alt = `Image de ${choixBot}`;
+        image2.style = "width:400px"
+    imageBoxBot.appendChild(image2);
+
+    const resultat = document.getElementById("zob");
+    if (regles[choix] === choixBot) {resultat.innerHTML = "Gagné"; resultat.style = "color: green"}
+    else if (regles[choixBot] === choix) {resultat.innerHTML = "Perdu"; resultat.style = "color: red"}
+    else {resultat.innerHTML = "Égalité"; resultat.style = "color: darkgoldenrod"}
+
+    console.log(choix)
+    console.log(choixBot)
+    console.log(regles[choix])
+
+}
+
+</script>
+
+</body>
+</html>

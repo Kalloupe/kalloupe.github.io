@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90vw;    
+    max-width: 2000px;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #006064;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    border: 2px solid #004d40;
+    border-radius: 8px;
+    background-color: #b2ebf2;
+}
