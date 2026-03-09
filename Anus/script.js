@@ -1,21 +1,13 @@
 const jeu = document.getElementById("jeu");
+const jarre = document.getElementById("jarre");
 
-
-
-function creerLigne(nb) {
-    for (let i = 1; i <= nb; i += 1) {
-        const ligne = document.createElement("div");
-        
-        ligne.style.position = "absolute";
-        ligne.style.width = (100/nb) + "%";
-        ligne.style.height = (100/nb)*i + "%";
-        ligne.style.border = "2px solid red";
-
-        ligne.style.left = "50%";
-        ligne.style.transform = "translate(-50%, 0%)"
-
-        jeu.appendChild(ligne);
+function creerJarre(n) {
+    jeu.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+    for (let i = 0; i < n**2; i += 1) {
+        const caze = document.createElement("div");
+        caze.classList.add("case");
+        jeu.appendChild(caze);
     }
 }
 
-creerLigne(5);
+creerJarre(11);
