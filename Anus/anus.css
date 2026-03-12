@@ -37,14 +37,28 @@ header {
 }
 
 #jeu {
-  position: relative;
-  width: 65%;
+  position: absolute;
+  width: 55%;
   height: 100%;
   display: grid;
   border: 3px solid red;
+  bottom: 0;
 }
 
-
 .case {
-  border : 1px solid black;
+  border: 1px solid black;
+}
+
+.aliment {
+  position: absolute;
+}
+
+#rect {
+  position: absolute;
+  height: 20%;
+  width: 3px;
+  left:13.333%;
+  top: 80%;
+
+  background:rgb(255, 0, 187);
 }
