@@ -89,8 +89,8 @@ function placerAliment(nom, hauteur, largeur) {
 
     jeu.appendChild(elt);
 }
-// placerAliment("rougail", 2*Hcase, 2*Lcase);
-placerAliment("nuggets_vege", 2*Hcase, 3*Lcase);
+placerAliment("rougail", 2*Hcase, 2*Lcase);
+// placerAliment("nuggets_vege", 2*Hcase, 3*Lcase);
 
 function gameLoop(time) {
 
